@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: #1B3A52;
+  background: linear-gradient(135deg, #E6F3F8 0%, #B0D4E3 100%);
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6F3F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B0D4E3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B3A52;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #E6F3F8 0%, #B0D4E3 50%, #E6F3F8 100%);
+  background-size: 1000px 100%;
+}
+
+/* Card styles */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(27, 58, 82, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 48px rgba(27, 58, 82, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #1B3A52 0%, #36454F 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27, 58, 82, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #1B3A52;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #B0D4E3;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #E6F3F8;
+  border-color: #1B3A52;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Risk indicators */
+.risk-high {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.risk-medium {
+  background: linear-gradient(135deg, #ffbb33 0%, #ff8800 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.risk-low {
+  background: linear-gradient(135deg, #00C851 0%, #007E33 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #B0D4E3;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]:hover {
+  background: #9cc4d6;
+}
+
+/* Webkit/Chrome slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1B3A52;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #36454F;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Webkit/Chrome slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #B0D4E3;
+}
+
+/* Firefox slider thumb */
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1B3A52;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #36454F;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Firefox slider track */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #B0D4E3;
+}
+
+/* Disabled state */
+input[type="range"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #d3d3d3;
+}
+
+input[type="range"]:disabled::-webkit-slider-thumb {
+  cursor: not-allowed;
+  background: #888;
+}
+
+input[type="range"]:disabled::-moz-range-thumb {
+  cursor: not-allowed;
+  background: #888;
+}

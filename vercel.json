@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "ignoreCommand": "exit 0",
+  "rewrites": [
+    {
+      "source": "/api/ml/:path*",
+      "destination": "https://your-ml-api-url.railway.app/:path*"
+    }
+  ]
+}
